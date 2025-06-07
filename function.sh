@@ -1,24 +1,19 @@
 #!/bin/bash
 
-function user() {
-	sudo useradd tim
-	sudo useradd ann
-	sudo useradd bradd
+function users () {
+for i in emma mia chloe zoe
+do
+    sudo useradd $i
+
+done
 }
 
-
-function file() {
-	mkdir folder1
-	touch file1
-	touch folder1/new
+function folders () {
+for i in day week month year
+do
+    mkdir $i
+done
 }
 
-
-function permission() {
-	sudo chown tim folder1
-	sudo chown ann file1
-}
-
-file
-permission
-user
+$1
+$2
